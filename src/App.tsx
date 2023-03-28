@@ -1,7 +1,19 @@
-import React from 'react';
+import React, {useState, ChangeEvent} from 'react';
 import './App.css';
 
-function App() {
+const App = (): JSX.Element => {
+
+  const [form, setForm] = useState('')
+
+  const onInputChange = (e: ChangeEvent<HTMLInputElement> ) => {
+    setForm(e.target.value)
+
+  }
+
+  // https://api.openweathermap.org/data/2.5/weather?q={city name},{state code},{country code}&appid={API key}
+
+
+
   return (
     <div className="App">
       <main>
@@ -11,14 +23,16 @@ function App() {
           Enter a city to view the weather:
         </p>
         <div>
-          <input type="text"/>
+          <input 
+            type="text"
+            value={form}
+            onChange={onInputChange}/>
           <button>
             Search
           </button>
         </div>
         </section>
       </main>
-
     </div>
   );
 }
