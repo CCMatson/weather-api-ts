@@ -1,5 +1,6 @@
 import { useEffect, useState, ChangeEvent } from "react"
 import { option } from "../types"
+import { forecast } from "../types"
 
 const useForecast = () => {
   const [form, setForm] = useState<string>('')
@@ -7,7 +8,7 @@ const useForecast = () => {
   const [city, setCity] = useState<option | null>(null)
 
   //fix this state:
-  const [forecast, setForecast] = useState<null>(null)
+  const [forecast, setForecast] = useState<forecast | null>(null)
 
   // fetch Option data from the geocoding api
   const getSearch = (value: string) => {
@@ -29,10 +30,19 @@ const useForecast = () => {
 
   const getForecast = (city: option) => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
+      // `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
     )
       .then(res => res.json())
-      .then(data => setForecast(data))
+      .then((data) => {
+        const forecastData = {
+          ...data.city, 
+          list: data.list.slice(0,10)
+        }
+        setForecast(forecastData)
+      })
+      // .then(data => setForecast(data))
+      // console.log(setForecast, 'data')
   }
 
   const onSubmit = () => {

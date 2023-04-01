@@ -12,7 +12,7 @@ const App = (): JSX.Element => {
     <div className="App">
       <main>
         {forecast ? (
-          'We have a forecast'
+          forecast.sunrise
         ): (
           <Search form={form} options={options} onSelectOption={onSelectOption} onInputChange={onInputChange} onSubmit={onSubmit} />
         )
