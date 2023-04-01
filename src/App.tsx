@@ -1,18 +1,22 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import './App.css';
+import { option } from './types';
+import Search from './components/Search';
 
-interface Option {
-  name: string;
-  state?: string;
-  country: string;
-  lat: number;
-  lon: number;
-}
+// interface Option {
+//   name: string;
+//   state?: string;
+//   country: string;
+//   lat: number;
+//   lon: number;
+// }
 
 const App = (): JSX.Element => {
   const [form, setForm] = useState<string>('')
-  const [options, setOptions] = useState<Option[]>([])
-  const [city, setCity] = useState<Option | null>(null)
+  const [options, setOptions] = useState<[]>([])
+  const [city, setCity] = useState<option | null>(null)
+  //fix this state:
+  const [forecast, setForecast] = useState<null>(null)
 
   // fetch Option data from the geocoding api
   const getSearch = (value: string) => {
@@ -32,20 +36,20 @@ const App = (): JSX.Element => {
     getSearch(value)
   }
 
-  const getForecast = (city: Option) => {
+  const getForecast = (city: option) => {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
     )
       .then(res => res.json())
-      .then(data => console.log({ data }))
+      .then(data => setForecast(data))
   }
 
-  const onSubmit =() => {
+  const onSubmit = () => {
     city && getForecast(city)
     console.log(city, 'city in onSubmit function')
   }
 
-  const onSelectOption = (option: Option) => {
+  const onSelectOption = (option: option) => {
     console.log(option.name, 'city name')
     console.log(option.lat)
     setCity(option)
@@ -64,34 +68,12 @@ const App = (): JSX.Element => {
   return (
     <div className="App">
       <main>
-        <section>
-          <h1>Weather Forecast</h1>
-          <p>
-            Enter a city to view the weather:
-          </p>
-          <div className="input">
-            <input
-              type="text"
-              value={form}
-              onChange={onInputChange} />
-
-            {options.length > 0 && (
-              <ul>
-                {options.map((option: Option) => (
-                  <li key={option.lat}>
-                    <button onClick={() => onSelectOption(option)}>
-                      {option.name}, {option.state}, {option.country}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            <button onClick={onSubmit}>
-              Search
-            </button>
-          </div>
-        </section>
+        {forecast ? (
+          'We have a forecast'
+        ): (
+          <Search form={form} options={options} onSelectOption={onSelectOption} onInputChange={onInputChange} onSubmit={onSubmit} />
+        )
+      }
       </main>
     </div>
   );
