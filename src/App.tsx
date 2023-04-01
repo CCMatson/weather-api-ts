@@ -1,16 +1,20 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import './App.css';
 
 interface Option {
   name: string;
   state?: string;
-  country?: string;
+  country: string;
+  lat: number;
+  lon: number;
 }
 
 const App = (): JSX.Element => {
   const [form, setForm] = useState<string>('')
   const [options, setOptions] = useState<Option[]>([])
+  const [city, setCity] = useState<Option | null>(null)
 
+  // fetch Option data from the geocoding api
   const getSearch = (value: string) => {
     fetch(`  http://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(value.trim())}&limit=5&lang=en&appid=${process.env.REACT_APP_API_KEY}`)
       .then((res) => res.json())
@@ -28,10 +32,33 @@ const App = (): JSX.Element => {
     getSearch(value)
   }
 
-  const onSelectOption = (option: Option) => {
-    setForm(option.name)
-    setOptions([])
+  const getForecast = (city: Option) => {
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
+    )
+      .then(res => res.json())
+      .then(data => console.log({ data }))
   }
+
+  const onSubmit =() => {
+    city && getForecast(city)
+    console.log(city, 'city in onSubmit function')
+  }
+
+  const onSelectOption = (option: Option) => {
+    console.log(option.name, 'city name')
+    console.log(option.lat)
+    setCity(option)
+  }
+
+  useEffect(() => {
+
+    if (city) {
+      setForm(city.name)
+      setOptions([])
+      console.log(city, 'city state in useEffect')
+    }
+  }, [city])
 
 
   return (
@@ -51,17 +78,16 @@ const App = (): JSX.Element => {
             {options.length > 0 && (
               <ul>
                 {options.map((option: Option) => (
-                  <li key={option.name} onClick={() => onSelectOption(option)}>
-                    <button>
+                  <li key={option.lat}>
+                    <button onClick={() => onSelectOption(option)}>
                       {option.name}, {option.state}, {option.country}
                     </button>
                   </li>
-                  // <p>{option.name}</p>
                 ))}
               </ul>
             )}
 
-            <button>
+            <button onClick={onSubmit}>
               Search
             </button>
           </div>
