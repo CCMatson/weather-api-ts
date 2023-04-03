@@ -10,9 +10,9 @@ const useForecast = () => {
   //fix this state:
   const [forecast, setForecast] = useState<forecast | null>(null)
 
-  // fetch Option data from the geocoding api
+  // fetch Option data from the geocoding api, should I switch to async await?
   const getSearch = (value: string) => {
-    fetch(`  http://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(value.trim())}&limit=5&lang=en&appid=${process.env.REACT_APP_API_KEY}`)
+    fetch(` http://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(value.trim())}&limit=5&lang=en&appid=${process.env.REACT_APP_API_KEY}`)
       .then((res) => res.json())
       .then((data) => setOptions(data))
   }
@@ -31,7 +31,6 @@ const useForecast = () => {
   const getForecast = (city: option) => {
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
-      // `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
     )
       .then(res => res.json())
       .then((data) => {
@@ -41,8 +40,6 @@ const useForecast = () => {
         }
         setForecast(forecastData)
       })
-      // .then(data => setForecast(data))
-      // console.log(setForecast, 'data')
   }
 
   const onSubmit = () => {
