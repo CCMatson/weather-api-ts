@@ -1,6 +1,7 @@
 import './App.css';
 import Search from './components/Search';
 import useForecast from './hooks/useForecast';
+import Forecast from './components/Forecast';
 
 const App = (): JSX.Element => {
   const {
@@ -12,7 +13,7 @@ const App = (): JSX.Element => {
     <div className="App">
       <main>
         {forecast ? (
-          forecast.sunrise
+          <Forecast data={forecast}/>
         ): (
           <Search form={form} options={options} onSelectOption={onSelectOption} onInputChange={onInputChange} onSubmit={onSubmit} />
         )
