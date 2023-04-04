@@ -21,7 +21,7 @@ const Search = ({
   return (
     <div className="App">
       <main>
-        <section>
+        <section className="viewer">
           <h1>Weather Forecast</h1>
           <p>
             Enter a city to view the weather:

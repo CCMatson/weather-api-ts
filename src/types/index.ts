@@ -23,7 +23,7 @@ export type forecast = {
     },
     weather: [{
       main: string,
-      incon: string,
+      icon: string,
       description: string,
     }],
     wind: {
