@@ -22,7 +22,7 @@ export type forecast = {
       temp_min: number,
     },
     weather: [{
-      name: string,
+      main: string,
       incon: string,
       description: string,
     }],
