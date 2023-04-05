@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-header{
+header {
   background-color: green;
   height: 10rem;
 }
@@ -26,11 +26,12 @@ main {
   align-items: center;
 }
 
-section h1{
+section h1 {
   font-family: 'Kanit', sans-serif;
   font-weight: 500;
   font-size: 2rem;
 }
+
 /* section p{
   font-weight: 300;
   font-style: italic;
@@ -64,7 +65,7 @@ button:hover {
 }
 
 /* add media query break boint */
-.forecast{
+.forecast {
   display: flex;
   /* align-items: flex-start; */
   /* flex-wrap: nowrap; */
@@ -77,30 +78,53 @@ button:hover {
   /* flex-shrink: 0; */
 }
 
-.forecast-icons{
-  /* display: flex; */
+.forecast-icons {
   background-color: orange;
   display: flex;
   flex-direction: column;
   border: 2px solid blue;
   padding: 1rem;
-  /* justify-content: center; */
-  /* flex-shrink: var(100rem); */
-  /* flex-shrink: ; */
-  /* flex-shrink: 0; */
-  
 }
 
 .forecast-icons p {
   margin: 0;
 }
 
-/* .sun-times {
+.sun-times {
   display: flex;
-  width: 30rem;
   justify-content: space-around;
+  background-color: red;
 }
-.sun-times div{
-display: flex;
-  border: black solid 2px;
+
+/* .sun-times h2 {
+  margin: 0;
 } */
+
+.sun-times div {
+  display: flex;
+  flex-direction: column;
+  border: black solid 2px;
+}
+
+.sun-times img {
+  width: 5rem;
+}
+
+article {
+  background-color: red;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+article h4 {
+  margin: 0;
+}
+
+article img {
+  width: 4rem;
+}

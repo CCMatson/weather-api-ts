@@ -1,5 +1,11 @@
 import { forecast } from "../types"
 import Degree from "./Degree"
+import Card from "./card"
+import { getSunTime , getWindDirection } from "../helpingFunctions"
+
+
+import sunrise from '../../src/assets/sunrise.png'
+import sunset from '../../src/assets/sunset.png'
 
 type Props = {
   data: forecast
@@ -31,14 +37,25 @@ const Forecast = ({data}: Props): JSX.Element => {
         ))}
       </section>
 
-      {/* <section className="sun-times">
+      <section className="sun-times">
         <div>
           <h2>sunrise</h2>
+          <span>{getSunTime(data.sunrise)}</span>
+          <img src={sunrise} alt="sunrise icon" />
         </div>
       <div>
         <h2>sunset</h2>
+        <span>{getSunTime(data.sunset)}</span>
+        <img src={sunset} alt="sunset icon" />
       </div>
-      </section> */}
+      </section>
+
+        <Card 
+        icon="wind" 
+        title="wind"
+        info={`${Math.round(today.wind.speed)} mph`}
+        description={`${getWindDirection(Math.round(today.wind.deg))}, gusts ${today.wind.gust.toFixed(1)} mph`}
+        />
 
     </div>
   )
