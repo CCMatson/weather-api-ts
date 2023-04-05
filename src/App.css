@@ -18,8 +18,8 @@ main {
 .viewer {
   background-color: white;
   opacity: 70%;
-  width: 80rem;
-  height: 80rem;
+  width: 60rem;
+  height: 60rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,7 +40,7 @@ section h1 {
 
 .search {
 width: 12rem;
-background-color: red;
+/* background-color: red; */
 display: flex;
 flex-direction: column;
 align-items: flex-start;
@@ -125,6 +125,9 @@ button:hover {
   display: flex;
   /* justify-content: space-evenly; */
   flex-direction: column;
+  /* background-color: blue; */
+  align-items: center;
+  justify-content: center;
   border: black solid .5px;
   border-radius: 10px;
   /* margin: .1rem;  */
@@ -167,8 +170,11 @@ article h4 {
 
 article img {
   width: 3rem;
+  padding: 1rem;
 }
 
 span {
-  font-weight: 500;
+  font-weight: 300;
 }
+
+/* dropdown test */
