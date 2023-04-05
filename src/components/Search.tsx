@@ -26,7 +26,7 @@ const Search = ({
           <p>
             Enter a city to view the weather:
           </p>
-          <div className="input">
+          <div className="search">
             <input
               type="text"
               value={form}

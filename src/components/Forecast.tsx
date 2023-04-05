@@ -77,7 +77,7 @@ const Forecast = ({ data }: Props): JSX.Element => {
         <Card 
         icon="pop"
         title="Precipitation"
-        info={`${Math.round(today.pop * 100)}% probablity of rain`}
+        info={`${Math.round(today.pop * 100)}% chance of rain`}
         description={`${getPop(today.pop)}`}
         // get pop
         />
