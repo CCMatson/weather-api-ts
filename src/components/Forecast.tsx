@@ -24,8 +24,15 @@ const Forecast = ({ data }: Props): JSX.Element => {
     <div className="viewer">
       <section className="today">
         <h2>{data.name}, <span>{data.country}</span></h2>
-        <p>{today.weather[0].main} ({today.weather[0].description})</p>
+{/* <h4>
+{today.weather[0].main} ({today.weather[0].description})
+</h4> */}
+<h2>
         <Degree temp={Math.round(today.main.temp)} />
+
+</h2>
+        <p>{today.weather[0].main} ({today.weather[0].description})</p>
+
         <p>High: <Degree temp={Math.ceil(today.main.temp_max)} /> Low: < Degree temp={Math.floor(today.main.temp_min)} /></p>
       </section>
 
@@ -45,12 +52,12 @@ const Forecast = ({ data }: Props): JSX.Element => {
 
       <section className="sun-times">
         <div>
-          <h2>sunrise</h2>
+          <h2>Sunrise</h2>
           <span>{getSunTime(data.sunrise)}</span>
           <img src={sunrise} alt="sunrise icon" />
         </div>
         <div>
-          <h2>sunset</h2>
+          <h2>Sunset</h2>
           <span>{getSunTime(data.sunset)}</span>
           <img src={sunset} alt="sunset icon" />
         </div>
@@ -59,7 +66,7 @@ const Forecast = ({ data }: Props): JSX.Element => {
       <section className="cards">
         <Card
           icon="wind"
-          title="wind"
+          title="Wind"
           info={`${Math.round(today.wind.speed)} mph`}
           description={`${getWindDirection(Math.round(today.wind.deg))}, gusts ${today.wind.gust.toFixed(1)} mph`}
         />

@@ -16,10 +16,10 @@ main {
 }
 
 .viewer {
-  background-color: white;
+  background-color: #EBF2FA;
   opacity: 70%;
   width: 60rem;
-  height: 60rem;
+  height: 70rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,72 +30,107 @@ section h1 {
   font-family: 'Kanit', sans-serif;
   font-weight: 500;
   font-size: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
-/* section p{
-  font-weight: 300;
+.today {
+  height: 11rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h2{
+  margin: .25rem;
+}
+
+p {
   font-style: italic;
-  font-size: 1.25rem;
-} */
+  font-size: 1rem;
+  margin: .25rem;
+}
 
 .search {
 width: 12rem;
-/* background-color: red; */
 display: flex;
 flex-direction: column;
 align-items: flex-start;
-/* justify-content: flex-start; */
 }
+
 
 div input {
   height: 2rem;
   width: 12rem;
   font-size: 1rem;
-  /* background-color: blue; */
+  margin-top: 1rem;
 }
 
 div ul {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 ul {
   list-style-type: none;
+  padding: 0rem;
+  margin: 0rem;
 }
 
 button {
-  background-color: #fff;
+  background-color: #EBF2FA;
   color: black;
   height: 2.4rem;
+  width: 12.5rem;
   font-size: 1rem;
-  /* border-radius: 10px; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 button:hover {
-  color: white;
+  color: #EBF2FA;
   background-color: black;
-  /* font-size: 1rem; */
+}
+
+.search-button {
+  background-color: #064789;
+  color: #EBF2FA;
+  box-shadow: 10px 5px 5px #427AA1;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.search-button:hover {
+  color: black;
+  background-color: #EBF2FA;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  margin-top: 1rem;
 }
 
 /* add media query break boint */
 .forecast {
   display: flex;
-  /* align-items: flex-start; */
-  /* flex-wrap: nowrap; */
-  /* white-space: nowrap; */
-  /* background-color: lightblue; */
+  background-color: #427AA1;
+  background-color: #064789;
   border: .5px black solid;
   border-radius: 10px;
   overflow-x: auto;
   width:42rem;
-  /* margin: 20rem; */
-  /* height: 15rem; */
-  /* flex-shrink: 0; */
 }
 
+/* conditional color */
 .forecast-icons {
-  background-color: lightslategray;
+  /* background-color: lightslategray; */
+  background-color: #EBF2FA;
+  background-color: #b3cee0;
   display: flex;
   flex-direction: column;
   border: .5px solid black;
@@ -109,7 +144,6 @@ button:hover {
 }
 
 .sun-times {
-  /* background-color: red; */
   width: 30rem;
   display: flex;
   justify-content: center;
@@ -119,15 +153,15 @@ button:hover {
 
 .sun-times h2 {
   margin: 0;
+  font-weight: 500;
 }
 
 .sun-times div {
   display: flex;
-  /* justify-content: space-evenly; */
   flex-direction: column;
-  /* background-color: blue; */
   align-items: center;
   justify-content: center;
+  /* background-color: #427AA1; */
   border: black solid .5px;
   border-radius: 10px;
   /* margin: .1rem;  */
@@ -137,11 +171,11 @@ button:hover {
 }
 
 .sun-times img {
-  width: 5rem;
+  width: 3rem;
+  padding: 1rem;
 }
 
 .cards{
-  /* background-color: blue; */
   width: 40rem;
   display: flex;
   justify-content: space-evenly;
@@ -149,7 +183,6 @@ button:hover {
 }
 
 article {
-  /* background-color: red; */
   width: 10rem;
   height: 10rem;
   display: flex;
@@ -177,4 +210,3 @@ span {
   font-weight: 300;
 }
 
-/* dropdown test */

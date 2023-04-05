@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { option } from '../types';
 
 type Props = {
@@ -16,6 +16,15 @@ const Search = ({
   onSelectOption, 
   onSubmit,
 }: Props): JSX.Element => {
+  const [selectedOption, setSelectedOption] = useState<option | null>(null)
+
+  const handleOptionSelect = (option: option) => {
+    setSelectedOption(option)
+    onSelectOption(option)
+    
+  }
+
+  const isOptionSelected =!!selectedOption 
 
 
   return (
@@ -26,7 +35,7 @@ const Search = ({
           <p>
             Enter a city to view the weather:
           </p>
-          <div className="dropdown">
+          <div className="search">
             <input
               type="text"
               value={form}
@@ -36,7 +45,7 @@ const Search = ({
               <ul>
                 {options.map((option: option) => (
                   <li key={option.lat}>
-                    <button onClick={() => onSelectOption(option)}>
+                    <button onClick={() => handleOptionSelect(option)}>
                       {option.name}, {option.state}, {option.country}
                     </button>
                   </li>
@@ -44,9 +53,11 @@ const Search = ({
               </ul>
             )}
 
-            <button onClick={onSubmit}>
+            {isOptionSelected && (
+            <button className="search-button" onClick={onSubmit}>
               Search
             </button>
+            )}
           </div>
         </section>
       </main>
