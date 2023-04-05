@@ -39,11 +39,12 @@ section h1 {
 } */
 
 .search {
-width: 15rem;
+width: 12rem;
 background-color: red;
 display: flex;
 flex-direction: column;
-justify-content: flex-start;
+align-items: flex-start;
+/* justify-content: flex-start; */
 }
 
 div input {
@@ -138,7 +139,7 @@ button:hover {
 
 .cards{
   /* background-color: blue; */
-  width: 30rem;
+  width: 40rem;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -153,7 +154,7 @@ article {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: .5rem;
+  padding: 1rem;
   margin-top: .5rem;
   margin-bottom: .5rem;
   border: .5px solid black;
@@ -165,5 +166,9 @@ article h4 {
 }
 
 article img {
-  width: 4rem;
+  width: 3rem;
+}
+
+span {
+  font-weight: 500;
 }
