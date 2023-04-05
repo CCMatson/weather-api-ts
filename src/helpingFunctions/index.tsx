@@ -25,3 +25,27 @@ export const getWindDirection = (deg: number): string => {
 
   return 'N'
 }
+
+export const getHumidityValue = (level: number): string => {
+  if (level <= 55) return 'Dry air'
+  if (level > 55 && level <= 65) return 'Medium moisture'
+
+  return 'Lots of moisture'
+}
+
+export const getPop = (value: number): string => {
+  if (value <= 0.33) return 'Dry skies'
+  if (value > 0.33 && value <= 0.66) return 'Some showers likely'
+
+  return 'Wear your raincoat!'
+}
+
+
+export const getVisibilityValue = (number: number): string => {
+  if (number <= 50) return 'Danger, low visibility'
+  if (number > 50 && number <= 500) return 'Heavy fog expected'
+  if (number > 500 && number <= 2000) return 'Some fog in the area'
+  if (number > 2000 && number <= 9000) return 'Expect some lavender haze'
+
+  return 'Clear day'
+}

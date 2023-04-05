@@ -18,8 +18,8 @@ main {
 .viewer {
   background-color: white;
   opacity: 70%;
-  width: 50rem;
-  height: 50rem;
+  width: 80rem;
+  height: 80rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,8 +70,9 @@ button:hover {
   /* align-items: flex-start; */
   /* flex-wrap: nowrap; */
   /* white-space: nowrap; */
-  background-color: lightblue;
+  /* background-color: lightblue; */
   border: 2px black solid;
+  border-radius: 10px;
   overflow-x: auto;
   width: 30rem;
   /* height: 15rem; */
@@ -79,11 +80,13 @@ button:hover {
 }
 
 .forecast-icons {
-  background-color: orange;
+  background-color: lightslategray;
   display: flex;
   flex-direction: column;
-  border: 2px solid blue;
-  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: .5rem;
+  margin: .5rem;
 }
 
 .forecast-icons p {
@@ -91,34 +94,51 @@ button:hover {
 }
 
 .sun-times {
+  /* background-color: red; */
+  width: 30rem;
   display: flex;
-  justify-content: space-around;
-  background-color: red;
+  padding: .5rem;
 }
 
-/* .sun-times h2 {
+.sun-times h2 {
   margin: 0;
-} */
+}
 
 .sun-times div {
   display: flex;
   flex-direction: column;
   border: black solid 2px;
+  border-radius: 10px;
+  margin-right: 2rem; 
+  padding: .5rem;
 }
 
 .sun-times img {
   width: 5rem;
 }
 
+.cards{
+  /* background-color: blue; */
+  width: 30rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 article {
-  background-color: red;
+  /* background-color: red; */
   width: 10rem;
   height: 10rem;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 article h4 {

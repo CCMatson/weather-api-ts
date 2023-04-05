@@ -29,14 +29,15 @@ const Card = ({
 }: Props): JSX.Element => {
   const Icon = icons[icon]
   return (
-    <article>
-      <div>
-        {Icon}
-        <h4>{title}</h4>
-      </div>
-      <h4>{info}</h4>
-      <div>{description}</div>
-    </article>
+      <article>
+        <div className='card-div'>
+          {Icon}
+          <h4>{title}</h4>
+        </div>
+        <h4>{info}</h4>
+        <div>{description}</div>
+      </article>
+
   )
 }
 

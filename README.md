@@ -14,3 +14,5 @@
 <a href="https://www.flaticon.com/free-icons/wind" title="wind icons">Wind icons created by Those Icons - Flaticon</a>
 
 <a href="https://www.flaticon.com/free-icons/temperature" title="temperature icons">Temperature icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/cloudy" title="cloudy icons">Cloudy icons created by kosonicon - Flaticon</a>
