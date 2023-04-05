@@ -2,10 +2,10 @@
   text-align: center;
 }
 
-header {
+/* header {
   background-color: green;
   height: 10rem;
-}
+} */
 
 main {
   background-color: grey;
@@ -52,16 +52,21 @@ div ul {
   align-items: flex-start;
 }
 
+ul {
+  list-style-type: none;
+}
+
 
 button {
-  background-color: black;
-  color: white;
+  background-color: #fff;
+  color: black;
+  /* font-size: 1rem; */
 }
 
 button:hover {
   color: black;
   background-color: white;
-  font-size: 1rem;
+  /* font-size: 1rem; */
 }
 
 /* add media query break boint */
@@ -71,10 +76,11 @@ button:hover {
   /* flex-wrap: nowrap; */
   /* white-space: nowrap; */
   /* background-color: lightblue; */
-  border: 2px black solid;
+  border: .5px black solid;
   border-radius: 10px;
   overflow-x: auto;
-  width: 30rem;
+  width:42rem;
+  /* margin: 20rem; */
   /* height: 15rem; */
   /* flex-shrink: 0; */
 }
@@ -83,7 +89,7 @@ button:hover {
   background-color: lightslategray;
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  border: .5px solid black;
   border-radius: 10px;
   padding: .5rem;
   margin: .5rem;
@@ -97,7 +103,9 @@ button:hover {
   /* background-color: red; */
   width: 30rem;
   display: flex;
+  justify-content: center;
   padding: .5rem;
+  margin-top: .5rem;
 }
 
 .sun-times h2 {
@@ -107,10 +115,12 @@ button:hover {
 .sun-times div {
   display: flex;
   flex-direction: column;
-  border: black solid 2px;
+  border: black solid .5px;
   border-radius: 10px;
-  margin-right: 2rem; 
-  padding: .5rem;
+  margin: 1rem; 
+  margin-right: 4rem; 
+  margin-left: 4rem; 
+  padding: .5rem; 
 }
 
 .sun-times img {
@@ -121,7 +131,7 @@ button:hover {
   /* background-color: blue; */
   width: 30rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
@@ -133,11 +143,11 @@ article {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
+  justify-content: center;
+  padding: .5rem;
   margin-top: .5rem;
   margin-bottom: .5rem;
-  border: 2px solid black;
+  border: .5px solid black;
   border-radius: 10px;
 }
 
