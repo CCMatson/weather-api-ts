@@ -106,18 +106,19 @@ button:hover {
 }
 
 .search-button {
-  background-color: #064789;
-  color: #EBF2FA;
+  color: black;
   box-shadow: 10px 5px 5px #427AA1;
   display: flex;
   justify-content: center;
   border-radius: 5px;
   margin-top: 1rem;
+  background-color: #EBF2FA;
 }
 
 .search-button:hover {
-  color: black;
-  background-color: #EBF2FA;
+  background-color: #064789;
+  color: #fff;
+  /* font-weight: 500; */
   display: flex;
   justify-content: center;
   border-radius: 5px;
