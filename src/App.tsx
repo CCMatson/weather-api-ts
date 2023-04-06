@@ -1,7 +1,7 @@
 import './App.css';
-import Search from './components/Search';
+import Search from './components/search';
 import useForecast from './hooks/useForecast';
-import Forecast from './components/Forecast';
+import Forecast from './components/forecast';
 
 const App = (): JSX.Element => {
   const {

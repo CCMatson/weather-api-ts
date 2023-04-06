@@ -1,5 +1,6 @@
 import { forecast } from "../types"
-import Degree from "./Degree"
+import Degree from "./degree"
+// import Degree from "./degree"
 import Card from "./card"
 import {
 getSunTime,
