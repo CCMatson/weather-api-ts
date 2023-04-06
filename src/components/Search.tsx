@@ -1,5 +1,6 @@
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { option } from '../types';
+import OptionList from './optionLIst';
 
 type Props = {
   form: string,
@@ -41,16 +42,10 @@ const Search = ({
               onChange={onInputChange} />
 
             {options.length > 0 && (
-              <ul>
-                {options.map((option: option) => (
-                  <li key={option.lat}>
-                    <button onClick={() => handleOptionSelect(option)}>
-                      {option.name}, {option.state}, {option.country}
-                    </button>
-                  </li>
-                ))}
-              </ul>
+              <OptionList options={options} handleOptionSelect={handleOptionSelect}/>
             )}
+
+    
 
             {isOptionSelected && (
             <button className="search-button" onClick={onSubmit}>
