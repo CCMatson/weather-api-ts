@@ -35,7 +35,7 @@ const Card = ({
           <h4>{title}</h4>
         </div>
         <h4>{info}</h4>
-        <div>{description}</div>
+        <h4>{description}</h4>
       </article>
 
   )

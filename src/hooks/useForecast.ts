@@ -15,6 +15,7 @@ const useForecast = () => {
     fetch(` http://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(value.trim())}&limit=5&lang=en&appid=${process.env.REACT_APP_API_KEY}`)
       .then((res) => res.json())
       .then((data) => setOptions(data))
+      .catch(e => console.log(e))
   }
 
   const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -35,11 +36,12 @@ const useForecast = () => {
       .then(res => res.json())
       .then((data) => {
         const forecastData = {
-          ...data.city, 
-          list: data.list.slice(0,10)
+          ...data.city,
+          list: data.list.slice(0, 10)
         }
         setForecast(forecastData)
-      })
+      }).catch(e => console.log(e)
+      )
   }
 
   const onSubmit = () => {

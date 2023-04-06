@@ -26,7 +26,6 @@ const Search = ({
 
   const isOptionSelected =!!selectedOption 
 
-
   return (
     <div className="App">
       <main>
