@@ -1,15 +1,14 @@
 import { forecast } from "../types"
 import Degree from "./degree"
-// import Degree from "./degree"
 import Card from "./card"
-import {
-getSunTime,
-getWindDirection,
-getHumidityValue,
-getPop,
-getVisibilityValue,
-} from "../helpingFunctions"
 
+import {
+  getSunTime,
+  getWindDirection,
+  getHumidityValue,
+  getPop,
+  getVisibilityValue,
+} from "../helpingFunctions"
 
 import sunrise from '../../src/assets/sunrise.png'
 import sunset from '../../src/assets/sunset.png'
@@ -25,13 +24,10 @@ const Forecast = ({ data }: Props): JSX.Element => {
     <div className="viewer">
       <section className="today">
         <h2>{data.name}, <span>{data.country}</span></h2>
-{/* <h4>
-{today.weather[0].main} ({today.weather[0].description})
-</h4> */}
-<h2>
-        <Degree temp={Math.round(today.main.temp)} />
+        <h2>
+          <Degree temp={Math.round(today.main.temp)} />
 
-</h2>
+        </h2>
         <p>{today.weather[0].main} ({today.weather[0].description})</p>
 
         <p>High: <Degree temp={Math.ceil(today.main.temp_max)} /> Low: < Degree temp={Math.floor(today.main.temp_min)} /></p>
@@ -82,12 +78,11 @@ const Forecast = ({ data }: Props): JSX.Element => {
             }`}
         />
 
-        <Card 
-        icon="pop"
-        title="Precipitation"
-        info={`${Math.round(today.pop * 100)}% chance of rain`}
-        description={`${getPop(today.pop)}`}
-        // get pop
+        <Card
+          icon="pop"
+          title="Precipitation"
+          info={`${Math.round(today.pop * 100)}% chance of rain`}
+          description={`${getPop(today.pop)}`}
         />
 
         <Card
@@ -98,26 +93,21 @@ const Forecast = ({ data }: Props): JSX.Element => {
         />
 
         {/* Average sea level air pressure is 1013 millibars*/}
-        <Card 
-        icon="pressure"
-        title="Pressure"
-        info={`${today.main.pressure} hPa`}
-        description={`${Math.round(today.main.pressure) < 1013 ? 'Lower' : 'Higher'} than standard`}
+        <Card
+          icon="pressure"
+          title="Pressure"
+          info={`${today.main.pressure} hPa`}
+          description={`${Math.round(today.main.pressure) < 1013 ? 'Lower' : 'Higher'} than standard`}
         />
 
         <Card
-        icon="visibility"
-        title="Visibility"
-        info={`${(today.visibility / 1000).toFixed()} km`}
-      description={getVisibilityValue(today.visibility)}
-        
-        
+          icon="visibility"
+          title="Visibility"
+          info={`${(today.visibility / 1000).toFixed()} km`}
+          description={getVisibilityValue(today.visibility)}
         />
 
-
       </section>
-
-
     </div>
   )
 }

@@ -45,7 +45,7 @@ export const getVisibilityValue = (number: number): string => {
   if (number <= 50) return 'Danger, low visibility'
   if (number > 50 && number <= 500) return 'Heavy fog expected'
   if (number > 500 && number <= 2000) return 'Some fog in the area'
-  if (number > 2000 && number <= 9000) return 'Expect some lavender haze'
+  if (number > 2000 && number <= 9000) return 'Expect some fog'
 
   return 'Clear day'
 }

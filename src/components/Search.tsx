@@ -28,13 +28,12 @@ const Search = ({
   const isOptionSelected =!!selectedOption 
 
   return (
-    <div className="App">
       <main>
         <section className="viewer">
           <h1>Weather Forecast</h1>
-          <p>
+          <h2>
             Enter a city to view the weather:
-          </p>
+          </h2>
           <div className="search">
             <input
               type="text"
@@ -45,8 +44,6 @@ const Search = ({
               <OptionList options={options} handleOptionSelect={handleOptionSelect}/>
             )}
 
-    
-
             {isOptionSelected && (
             <button className="search-button" onClick={onSubmit}>
               Search
@@ -55,7 +52,6 @@ const Search = ({
           </div>
         </section>
       </main>
-    </div>
   );
 }
 
