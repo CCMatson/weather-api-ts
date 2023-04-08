@@ -1,12 +1,12 @@
 import { ChangeEvent, useState } from 'react';
-import { option } from '../types';
+import { Option } from '../types';
 import OptionList from './optionList';
 
-type Props = {
+interface Props {
   form: string,
   options: [],
   onInputChange: (e: ChangeEvent<HTMLInputElement>) => void,
-  onSelectOption: (option: option) => void,
+  onSelectOption: (option: Option) => void,
   onSubmit: () => void,
 }
 
@@ -17,15 +17,15 @@ const Search = ({
   onSelectOption, 
   onSubmit,
 }: Props): JSX.Element => {
-  const [selectedOption, setSelectedOption] = useState<option | null>(null)
+  const [selectedOption, setSelectedOption] = useState<Option | null>(null)
 
-  const handleOptionSelect = (option: option) => {
+  const handleOptionSelect = (option: Option) => {
     setSelectedOption(option)
     onSelectOption(option)
     
   }
 
-  const isOptionSelected =!!selectedOption 
+  const isOptionSelected = !!selectedOption 
 
   return (
       <main>

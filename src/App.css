@@ -180,8 +180,6 @@ button:hover {
   justify-content: space-evenly;
   flex-wrap: wrap;
   font-weight: 100;
-  font-family: 'Rajdhani', sans-serif;
-  /* background-color: red; */
   font-family: 'Be Vietnam Pro', sans-serif;
 }
 
@@ -189,7 +187,6 @@ button:hover {
   font-family: 'Kanit', sans-serif;
   font-family: 'Rajdhani', sans-serif;
   font-weight: 100;
-  /* background-color: red; */
   font-family: 'Be Vietnam Pro', sans-serif;
 }
 
