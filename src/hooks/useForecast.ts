@@ -9,6 +9,7 @@ const useForecast = () => {
 
   const [forecast, setForecast] = useState<Forecast | null>(null)
 
+  //call to geocoding data
   const getSearch = (value: string) => {
     fetch(` http://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(value.trim())}&limit=5&lang=en&appid=${process.env.REACT_APP_API_KEY}`)
       .then((res) => res.json())
@@ -27,6 +28,7 @@ const useForecast = () => {
     getSearch(value)
   }
 
+  //call to hourly forecast
   const getForecast = (city: Option) => {
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
