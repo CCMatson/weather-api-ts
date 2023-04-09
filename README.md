@@ -1,6 +1,11 @@
-# Weather Api practice with React and Typescript
+#  Weather App
+## Built with React, Typescript, and Weather Api
+
+## This app gets data from Open Weather Api. It includes calls to two endpoings, one to get geocoding data and the other to the hourly forecast. 
 
 #### Attributions:
+[Open Weather API](https://openweathermap.org/api)
+
 <a href="https://www.flaticon.com/free-icons/sunset" title="sunset icons">Sunset icons created by Mehwish - Flaticon</a>
 
 <a href="https://www.flaticon.com/free-icons/visibility" title="visibility icons">Visibility icons created by smashingstocks - Flaticon</a>
