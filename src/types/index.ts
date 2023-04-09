@@ -1,4 +1,4 @@
-export type option = {
+export type Option = {
   name: string;
   state?: string;
   country: string;
@@ -6,7 +6,7 @@ export type option = {
   lon: number;
 }
 
-export type forecast = {
+export type Forecast = {
   name: string,
   country: string,
   sunrise: number,

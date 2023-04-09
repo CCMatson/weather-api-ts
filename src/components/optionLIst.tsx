@@ -1,14 +1,14 @@
-import { option } from "../types"
+import { Option } from "../types"
 
 type OptionListProps = {
-  options: option[],
-  handleOptionSelect: (option: option) => void
+  options: Option[],
+  handleOptionSelect: (option: Option) => void
 }
 
 const OptionList = ({ options, handleOptionSelect }: OptionListProps) => {
   return (
         <ul>
-          {options.map((option: option) => (
+          {options.map((option: Option) => (
             <li key={option.lat}>
               <button onClick={() => handleOptionSelect(option)}>
                 {option.name}, {option.state}, {option.country}

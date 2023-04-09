@@ -1,4 +1,4 @@
-import { forecast } from "../types"
+import { Forecast } from "../types"
 import Degree from "./degree"
 import Card from "./card"
 
@@ -14,10 +14,10 @@ import sunrise from '../../src/assets/sunrise.png'
 import sunset from '../../src/assets/sunset.png'
 
 type Props = {
-  data: forecast
+  data: Forecast
 }
 
-const Forecast = ({ data }: Props): JSX.Element => {
+const ForecastData = ({ data }: Props): JSX.Element => {
   const today = data.list[0]
 
   return (
@@ -112,4 +112,4 @@ const Forecast = ({ data }: Props): JSX.Element => {
   )
 }
 
-export default Forecast
+export default ForecastData

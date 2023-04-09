@@ -1,16 +1,14 @@
-import { useEffect, useState, ChangeEvent } from "react"
-import { option } from "../types"
-import { forecast } from "../types"
+import { useState, ChangeEvent } from "react"
+import { Option } from "../types"
+import { Forecast } from "../types"
 
 const useForecast = () => {
   const [form, setForm] = useState<string>('')
   const [options, setOptions] = useState<[]>([])
-  const [city, setCity] = useState<option | null>(null)
+  const [city, setCity] = useState<Option | null>(null)
 
-  //fix this state:
-  const [forecast, setForecast] = useState<forecast | null>(null)
+  const [forecast, setForecast] = useState<Forecast | null>(null)
 
-  // fetch Option data from the geocoding api, should I switch to async await?
   const getSearch = (value: string) => {
     fetch(` http://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(value.trim())}&limit=5&lang=en&appid=${process.env.REACT_APP_API_KEY}`)
       .then((res) => res.json())
@@ -29,7 +27,7 @@ const useForecast = () => {
     getSearch(value)
   }
 
-  const getForecast = (city: option) => {
+  const getForecast = (city: Option) => {
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
     )
@@ -45,24 +43,16 @@ const useForecast = () => {
   }
 
   const onSubmit = () => {
-    city && getForecast(city)
-    console.log(city, 'city in onSubmit function')
-  }
-
-  const onSelectOption = (option: option) => {
-    console.log(option.name, 'city name')
-    console.log(option.lat)
-    setCity(option)
-  }
-
-  useEffect(() => {
-
-    if (city) {
+    if (city != null){
       setForm(city.name)
       setOptions([])
-      console.log(city, 'city state in useEffect')
+      getForecast(city)
     }
-  }, [city])
+  }
+
+  const onSelectOption = (option: Option) => {
+    setCity(option)
+  }
 
   return {
     form, options, forecast, onInputChange, onSelectOption, onSubmit
