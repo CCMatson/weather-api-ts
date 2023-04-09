@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from 'react';
 import { Option } from '../types';
 import OptionList from './optionList';
 
-interface Props {
+type Props = {
   form: string,
   options: [],
   onInputChange: (e: ChangeEvent<HTMLInputElement>) => void,
