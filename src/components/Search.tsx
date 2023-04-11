@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 import { Option } from '../types';
-import OptionList from './optionList';
+import OptionList from './optionList'
 
 type Props = {
   form: string,
