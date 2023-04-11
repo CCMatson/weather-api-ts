@@ -28,7 +28,7 @@ const useForecast = () => {
     getSearch(value)
   }
 
-  //call to hourly forecast
+  //call to hourly forecast.
   const getForecast = (city: Option) => {
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
