@@ -1,4 +1,5 @@
 import './App.css';
+// import Search from './components/search';
 import Search from './components/search';
 import useForecast from './hooks/useForecast';
 import Forecast from './components/forecast';
