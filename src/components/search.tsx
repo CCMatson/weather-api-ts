@@ -37,7 +37,7 @@ const Search = ({
           <div className="search">
             <input
               type="text"
-              value={form}
+              value={selectedOption ? `${selectedOption.name}, ${selectedOption.state}, ${selectedOption.country}` : form}
               onChange={onInputChange} />
 
             {options.length > 0 && (

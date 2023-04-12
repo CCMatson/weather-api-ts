@@ -1,7 +1,7 @@
 import { useState, ChangeEvent } from "react"
 import { Option } from "../types"
 import { Forecast } from "../types"
-import ForecastData from "../components/forecast"
+// import ForecastData from "../components/forecast"
 
 const useForecast = () => {
   const [form, setForm] = useState<string>('')
@@ -9,14 +9,6 @@ const useForecast = () => {
   const [city, setCity] = useState<Option | null>(null)
 
   const [forecast, setForecast] = useState<Forecast | null>(null)
-
-  //call to geocoding data
-  // const getSearch = (value: string) => {
-  //   fetch(` http://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(value.trim())}&limit=5&lang=en&appid=${process.env.REACT_APP_API_KEY}`)
-  //     .then((res) => res.json())
-  //     .then((data) => setOptions(data))
-  //     .catch((error) => console.error(error))
-  // }
 
   const getSearch = async (value: string) => {
     try {
@@ -28,7 +20,6 @@ const useForecast = () => {
     }
   }
 
-
   const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     const value = e.target.value
@@ -39,23 +30,6 @@ const useForecast = () => {
     }
     getSearch(value)
   }
-
-  //call to hourly forecast.
-  // const getForecast = (city: Option) => {
-  //   fetch(
-  //     `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
-  //   )
-  //     .then(res => res.json())
-  //     .then((data) => {
-  //       const forecastData = {
-  //         ...data.city,
-  //         list: data.list.slice(0, 10)
-  //       }
-  //       setForecast(forecastData)
-  //     })
-  //     // .catch(e => console.log(e)
-  //     .catch((error) => console.error(error))
-  // }
 
   const getForecast = async (city: Option) => {
     try {
