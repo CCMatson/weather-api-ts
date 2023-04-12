@@ -12,7 +12,7 @@ const useForecast = () => {
 
   const getSearch = async (value: string) => {
     try {
-      const response = await fetch(` http://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(value.trim())}&limit=5&lang=en&appid=${process.env.REACT_APP_API_KEY}`)
+      const response = await fetch(` https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(value.trim())}&limit=5&lang=en&appid=${process.env.REACT_APP_API_KEY}`)
       const data = await response.json()
       setOptions(data)
     } catch (error) {
