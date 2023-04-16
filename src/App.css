@@ -234,14 +234,20 @@ span {
     width: 100%;
     display: flex;
     align-items: center;
+    margin: auto;
+    background-color: red;
   }
 
   .App {
     background-color: green;
     height: 50rem;
-width: 100%;
+    width: 100%;
   }
-  
+
+  body{
+    width: 100%;
+    /* background-color: red; */
+  }
   main {
     /* background-color: #064789; */
     display: flex;
@@ -253,6 +259,7 @@ width: 100%;
     width: 100%;
     /* margin-top: 10rem; */
     /* background-color: #427aa1; */
+    margin: auto;
   }
 
   .viewer {
@@ -260,8 +267,8 @@ width: 100%;
     border-radius: 24px;
     /* border: black solid 1px; */
     height: 100vh;
-    width: 50%;
-    padding: 1rem;
+    width: 100%;
+    margin: auto;
   }
 
 
@@ -298,7 +305,7 @@ width: 100%;
     /* background-color: red; */
   }
 
-  .forecast-icons{
+  .forecast-icons {
     height: 40px;
   }
 
