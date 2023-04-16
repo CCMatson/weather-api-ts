@@ -7,11 +7,6 @@ html {
   text-align: center;
 }
 
-/* header {
-  background-color: green;
-  height: 10rem;
-} */
-
 main {
   display: flex;
   justify-content: center;
@@ -99,7 +94,6 @@ button:hover {
 .search-button:hover {
   background-color: #064789;
   color: #fff;
-  /* font-weight: 500; */
   display: flex;
   justify-content: center;
   border-radius: 5px;
@@ -108,7 +102,6 @@ button:hover {
   font-weight: bolder;
 }
 
-/* add media query break boint */
 .forecast {
   display: flex;
   background-color: #427AA1;
@@ -119,9 +112,7 @@ button:hover {
   width: 33.5rem;
 }
 
-/* conditional color */
 .forecast-icons {
-  /* background-color: lightslategray; */
   background-color: #EBF2FA;
   background-color: #b3cee0;
   display: flex;
@@ -143,7 +134,6 @@ button:hover {
   padding: .5rem;
   margin-top: .5rem;
   font-family: 'Kanit', sans-serif;
-  /* background-color: #427AA1; */
 }
 
 .sun-times h2 {
@@ -160,9 +150,6 @@ button:hover {
   background-color: #fff;
   border: black solid .5px;
   border-radius: 10px;
-  /* margin: .1rem;  */
-  /* margin-right: 3rem; 
-  margin-left: 3rem;  */
   padding: 1rem;
   height: 3.5rem;
   width: 10rem;
@@ -171,7 +158,6 @@ button:hover {
 
 .sun-times img {
   width: 2rem;
-  /* padding: 1rem; */
 }
 
 .cards {
@@ -227,15 +213,11 @@ span {
 @media screen and (max-width: 850px) {
 
   html {
-    /* background-color: #EBF2FA; */
-    /* background-color: #ebf2fa; */
-    /* background-color: red; */
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     margin: auto;
-    background-color: red;
   }
 
   .App {
@@ -246,10 +228,8 @@ span {
 
   body{
     width: 100%;
-    /* background-color: red; */
   }
   main {
-    /* background-color: #064789; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -257,15 +237,12 @@ span {
     background-color: #EBF2FA;
     height: 100%;
     width: 100%;
-    /* margin-top: 10rem; */
-    /* background-color: #427aa1; */
     margin: auto;
   }
 
   .viewer {
     background-color: #EBF2FA;
     border-radius: 24px;
-    /* border: black solid 1px; */
     height: 100vh;
     width: 100%;
     margin: auto;
@@ -273,7 +250,6 @@ span {
 
 
   .viewer input {
-    /* background-color: yellow; */
     border-radius: 10px;
     width: 11.5rem;
   }
@@ -302,7 +278,6 @@ span {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    /* background-color: red; */
   }
 
   .forecast-icons {
@@ -319,13 +294,11 @@ span {
   }
 
   .sun-times div {
-    /* background-color: green; */
     width: 7rem;
     margin: .30rem;
   }
 
   .cards {
-    /* background-color: floralwhite; */
     width: 20rem;
   }
 
