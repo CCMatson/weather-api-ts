@@ -21,7 +21,8 @@ const ForecastData = ({ data }: Props): JSX.Element => {
   const today = data.list[0]
 
   return (
-    <div className="viewer">
+    <main>
+    <section className="viewer">
       <section className="today">
         <h2>{data.name}, <span>{data.country}</span></h2>
         <h2>
@@ -108,7 +109,8 @@ const ForecastData = ({ data }: Props): JSX.Element => {
         />
 
       </section>
-    </div>
+    </section>
+    </main>
   )
 }
 
